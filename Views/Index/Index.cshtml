@@ -1,0 +1,47 @@
+﻿<!--Team 1-3
+ * Members: HaiJung Hsu, Bailey Colemen, Ethan Guinn, and Tiara Johnson
+ * Section 1
+ * Project Description: This program uploads a webpage that contains the MLS Soccer League rankings based on their wins.
+ -->
+<!DOCTYPE html>
+<header>
+    <!-- setting up styles for table, body and font -->
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            padding: 10px 10px 10px 10px;
+            text-align: center;
+            background-color: white;
+        }
+
+        h2, h3 {
+            text-align: left;
+            color: white;
+        }
+
+        body {
+            background-image: url('../../Content/Images/background_image.jpg');
+        }
+    </style>
+</header>
+<body>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>MLS Standings</h2>
+    <h3>Hover over your favorite team's name to see them in action.</h3>
+    @Html.Raw((String)ViewBag.Output)
+
+    <!--declare function to display highlighting function.-->
+    <script>
+        function imageAppear(imageId) {
+            document.getElementById(imageId).style.visibility = "visible";
+        }
+
+        function imageDisappear(imageId) {
+            document.getElementById(imageId).style.visibility = "hidden";
+        }
+    </script>
+</body>
